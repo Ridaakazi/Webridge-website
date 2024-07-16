@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  margin: 0; /* Reset default margin */
+}
+
+.v41_61 {
+  width: auto;
+  position: absolute;
+  top: 10px;
+  left: 27px;
+  font-family: Abhaya Libre ExtraBold;
+  font-weight: Regular;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}
+
+.transparent-bg {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the last value for transparency */
+}
+
+.responsive-width {
+  width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 3rem; /* Adjust the gap between columns */
+  align-items: center;
+}
+.grid-item {
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  height: 300px; /* Adjust height as needed */
+  align-items: flex-start;
+}
+
+.grid-item:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-image: url('/images/v43_14.png'); Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7; /* Adjust opacity as desired */
+  z-index: 1;
+}
+
+.grid-item > * {
+  position: relative;
+  z-index: 2;
+}
+
+.image-overlay {
+  position: relative;
+  background-image: url('images/v41_37.png');
+  background-size: cover;
+  background-position: center;
+  height: 710px;
+}
+
+.overlay {
+  position: relative; /* Changed to relative */
+  z-index: 1; /* Ensure text is above image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem; /* Adjust padding for text alignment */
+  text-align: left;
+  color: white; /* Text color */
+}
+
+.overlay-content {
+  max-width: 500px; /* Adjust as needed */
+}
+
+.image-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the shade */
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* background-color: rgba(0, 0, 0, 0.8);  */
+  transition: background-color 0.3s ease;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white; 
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00bcd4;
+}
+
+/* Hide and slide down effect */
+.navbar.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.service-button {
+  display: inline-flex;
+
+  min-width: 300px; 
+  width: 100%; 
+}
+
+.service-button i {
+  margin-right: 10px; 
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(200, 194, 194); 
+  color: black; 
+}
+
+.overlay-content ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.overlay-content li {
+  width: 100%; 
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1rem; 
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; 
+  }
+
+  .v41_61 {
+    color: white;
+    font-size: medium;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1rem 1rem;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .navbar a {
+    font-size: 0.7rem;
+    /* margin-right: 0.2px; */
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+
+  .overlay {
+    order: 2; 
+    padding: 2rem; 
+  }
+
+  .image-overlay {
+    order: 1; 
+  }
+
+  .v41_61 {
+    font-size: medium;
+    color: white;
+    padding: .2rem 1rem ;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    padding: 0.4rem 0.4rem; 
+    justify-content: flex-end;
+    align-items: right;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .navbar a {
+    font-size: 0.7rem;
+    margin-right: 0.2px;
+  }
+
+  .v41_61 {
+    color: white;
+    font-size: small;
+    padding: .06rem .5rem;
+  }
+
+}
